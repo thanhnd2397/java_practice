@@ -1,5 +1,7 @@
 package org.example.java_practice.service;
 
+import org.example.java_practice.model.dto.UserRequest;
+import org.example.java_practice.model.dto.UserResponse;
 import org.example.java_practice.model.entity.User;
 
 import java.util.List;
