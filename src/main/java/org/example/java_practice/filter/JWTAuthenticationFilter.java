@@ -31,6 +31,7 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
     public JWTAuthenticationFilter() {
         System.out.println("JWTAuthenticationFilter starts !");
     }
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain filterChain)
@@ -66,7 +67,7 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
                 int userId = Integer.parseInt(authentication.getName());
                 authentication = this.authenticationService.getUserAuthenticationInfo(userId, token);
                 if (null == authentication) {
-                    logger.info(String.format("%dのアカウントはすでに削除されました。", userId));
+                    logger.info("{}のアカウントはすでに削除されました。", userId);
                     SecurityContextHolder.clearContext();
                 } else {
                     SecurityContextHolder.getContext().setAuthentication(authentication);

@@ -43,7 +43,7 @@ public class ExceptionHandlerFilter extends OncePerRequestFilter {
 
     private void setErrorResponse(int httpCode, String errorCode, HttpServletResponse response,
                                   Throwable ex) {
-        logger.info("Error with token: " + ex.getMessage());
+        logger.info("Error with token: {}", ex.getMessage());
         String message = this.messageSource.getMessage(errorCode, null,
                 LocaleContextHolder.getLocale());
         MyPageUtils.getInstance()
