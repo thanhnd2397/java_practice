@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3356/java_practice
+    username: 'root'
+    password: 'p@ssw0rd'
