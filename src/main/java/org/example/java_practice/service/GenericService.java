@@ -5,6 +5,7 @@ import org.example.java_practice.model.entity.base.AbstractLockAuditableEntity;
 import org.example.java_practice.util.exception.UnModifiableException;
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
 import java.util.List;

@@ -10,6 +10,7 @@ import org.example.java_practice.model.entity.base.EntityVersionHolder;
 import org.example.java_practice.service.GenericService;
 import org.example.java_practice.util.exception.UnModifiableException;
 import org.hibernate.service.spi.ServiceException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -30,7 +31,8 @@ public abstract class GenericServiceImpl<T extends AbstractLockAuditableEntity<I
 
     private static final Logger logger = LogManager.getLogger(GenericServiceImpl.class);
 
-    private final EntityVersionHolder entityVersionHolder;
+    @Autowired
+    private EntityVersionHolder entityVersionHolder;
 
     private synchronized Map<String, Integer> getVersionHolder() {
         if (null == this.entityVersionHolder.getVersionHolder()) {
